@@ -1,0 +1,77 @@
+{
+  "name": "intell-manage-ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "fmt": "vue-cli-service lint --fix",
+    "commit": "git cz"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "element-ui": "^2.4.11",
+    "sanitize.css": "^8.0.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "commitizen": "^3.0.5",
+    "cz-customizable": "^5.3.0",
+    "eslint": "^5.11.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.0",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.15.3",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17",
+    "yorkie": "^2.0.0"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-configrc.js"
+    }
+  },
+  "engines": {
+    "node": ">= 8.11.*"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS",
+    "post-merge": "yarn"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

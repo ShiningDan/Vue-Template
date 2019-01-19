@@ -1,0 +1,91 @@
+@import '~sanitize.css';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  min-height: 100%;
+}
+
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Helvetica Neue', 'PingFang SC', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.el-select {
+  width: 100%;
+}
+
+// 创建项目和插件的动画 Icon Button
+.item-create-wrap {
+  position: fixed;
+  font-size: 12px;
+  @media screen and (min-width: 1500px) {
+    bottom: 15%;
+    right: 2%;
+  }
+  @media screen and (max-width: 1500px) {
+    bottom: 8%;
+    right: 3%;
+  }
+  z-index: 999;
+}
+.item-create-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(18, 98, 253, 0.5);
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px #8888884a;
+  color: white;
+  font-weight: blod;
+  animation: comein 1s;
+  animation-delay: 0.8s;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(18, 98, 253, 0.6);
+    box-shadow: 8px 8px 8px #8888884a;
+  }
+}
+@keyframes comein {
+  0% {
+    background-color: rgba(18, 98, 253, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgba(18, 98, 253, 0.9);
+    transform: scale(1.5);
+  }
+  100% {
+    background-color: rgba(18, 98, 253, 0.5);
+    transform: scale(1);
+  }
+}
